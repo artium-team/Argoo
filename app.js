@@ -23,7 +23,7 @@ function game4(question, a, b, c, d, timer, correct) {
     timer = timer > 60 ? 60 : timer
 
     if (timer > 0) {
-        document.querySelector("#main").insertAdjacentHTML("beforebegin", `<div id="timer" class="absolute w-20 h-20 bg-slate-100 rounded-3xl flex justify-center items-center m-2 font-semibold text-2xl"><p id="timer-value">Test</p></div>`)
+        document.querySelector("#main").insertAdjacentHTML("beforebegin", `<div id="timer" class="absolute w-40 h-20 bg-slate-100 rounded-3xl flex justify-center items-center m-2 font-semibold text-2xl"><p id="timer-value">Test</p></div>`)
     }
 
     document.querySelector("#timer-value").innerHTML = timer
@@ -32,12 +32,12 @@ function game4(question, a, b, c, d, timer, correct) {
             document.querySelector("#timer-value").innerHTML = timer
             timer--
         } else {
+            document.querySelector("#timer-value").innerHTML = "Hết giờ!"
             for (i = 0; i < 4; i++) {
                 if (i != correct-1) {
                     document.querySelector(`#${answers[i]}`).style.opacity -= 0.1
                 }
             }
-            // clearInterval(this)
         }
     }, 1000);
 }
@@ -53,7 +53,7 @@ function game2(question, a, b, timer, correct) {
     timer = timer > 60 ? 60 : timer
 
     if (timer > 0) {
-        document.querySelector("#main").insertAdjacentHTML("beforebegin", `<div id="timer" class="absolute w-20 h-20 bg-slate-100 rounded-3xl flex justify-center items-center m-2 font-semibold text-2xl"><p id="timer-value">Test</p></div>`)
+        document.querySelector("#main").insertAdjacentHTML("beforebegin", `<div id="timer" class="absolute w-40 h-20 bg-slate-100 rounded-3xl flex justify-center items-center m-2 font-semibold text-2xl"><p id="timer-value">Test</p></div>`)
     }
 
     document.querySelector("#timer-value").innerHTML = timer
@@ -62,12 +62,12 @@ function game2(question, a, b, timer, correct) {
             document.querySelector("#timer-value").innerHTML = timer
             timer--
         } else {
+            document.querySelector("#timer-value").innerHTML = "Hết giờ!"
             for (i = 0; i < 2; i++) {
                 if (i != correct-1) {
                     document.querySelector(`#${answers[i]}`).style.opacity -= 0.1
                 }
             }
-            // clearInterval(this)
         }
     }, 1000);
 }
@@ -83,19 +83,13 @@ function change() {
 
     clearInterval(interval)
 
+    checkTypeAndRun()
+}
+
+function checkTypeAndRun() {
     if (questionList[questionNumber].c) {
         game4(questionList[questionNumber].question, questionList[questionNumber].a, questionList[questionNumber].b, questionList[questionNumber].c, questionList[questionNumber].d, questionList[questionNumber].timer, questionList[questionNumber].correct)
     } else {
         game2(questionList[questionNumber].question, questionList[questionNumber].a, questionList[questionNumber].b, questionList[questionNumber].timer, questionList[questionNumber].correct)
     }
 }
-
-set4("AAA", 1, 2, 3, 4, 5, 3)
-set4("BBB", 5, 6, 7, 8, 5, 1)
-
-if (questionList[questionNumber].c) {
-    game4(questionList[questionNumber].question, questionList[questionNumber].a, questionList[questionNumber].b, questionList[questionNumber].c, questionList[questionNumber].d, questionList[questionNumber].timer, questionList[questionNumber].correct)
-} else {
-    game2(questionList[questionNumber].question, questionList[questionNumber].a, questionList[questionNumber].b, questionList[questionNumber].timer, questionList[questionNumber].correct)
-}
-
