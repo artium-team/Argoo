@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Argoo!</title>
-
-    <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="body">
-    <script src="app.js"></script>
+<body>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="game.js"></script>
-    <script>checkTypeAndRun()</script>
-</body>
 
+    <div class="h-screen w-screen flex items-center justify-center">
+        <div class="h-[70vh] w-screen flex items-center justify-center flex-wrap">
+            <div class="flex items-center justify-center bg-red-400 rounded-3xl h-32 w-2/3">
+                <div class="flex items-center justify-center text-3xl font-bold bg-slate-100 rounded-3xl h-24 w-4/5">
+                    <!-- Tiêu đề -->
+                    Tiêu đề Tiêu đề 
+                </div>
+            </div>
+            <div id="next" class="flex items-center justify-center bg-blue-400 rounded-3xl h-24 w-1/2">
+                <div class="flex items-center justify-center text-2xl font-bold bg-slate-100 rounded-3xl h-16 w-4/5">
+                    Cùng bắt đầu thôi nào!!!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#next").onclick = () => {window.location.href = 'index.html'};
+    </script>
+    
+</body>
 </html>
