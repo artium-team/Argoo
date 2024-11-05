@@ -1,2 +1,2 @@
 # Argoo
-🧩 A web for class quizzes game but without phones! 🧩
+🧩 A web for class quizzes 🧩
