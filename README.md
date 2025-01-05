@@ -1,2 +1,2 @@
 # Argoo
-🧩 A web for class quizzes 🧩
+🧩 A tool for class quizzes 🧩
